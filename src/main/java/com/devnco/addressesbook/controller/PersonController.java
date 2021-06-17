@@ -8,6 +8,6 @@ public class PersonController {
 
   @GetMapping("/")
   public String getVersion() {
-    return "This is the version v1";
+    return "The current version is v1";
   }
 }
