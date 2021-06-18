@@ -33,3 +33,6 @@ jobs:
           heroku_api_key: ${{ secrets.HEROKU_APP_KEY }}
           heroku_app_name: ${{ secrets.HEROKU_BOOK_APP_NAME }}
           heroku_email: ${{ secrets.HEROKU_EMAIL }}
+
+      - name: list git remotes
+        run: git remote
