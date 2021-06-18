@@ -16,8 +16,4 @@ public class PersonController {
     return "The PR was validated!";
   }
 
-  @GetMapping("/ci")
-  public String getCI() {
-    return "CI working!";
-  }
 }
