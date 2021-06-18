@@ -17,7 +17,7 @@ public class PersonController {
   }
 
   @GetMapping("/ci")
-  public String getCheckPR() {
+  public String getCI() {
     return "CI working!";
   }
 }
