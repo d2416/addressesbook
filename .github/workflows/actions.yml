@@ -29,6 +29,9 @@ jobs:
       - name: Build with Maven (build + tests)
         run: mvn -B package --file pom.xml
 
+      - name: Run Super-Linter
+        uses: github/super-linter@v3
+
       - name: Add remote origin
         run: |
           git remote add heroku https://heroku:${{ secrets.HEROKU_API_KEY }}@git.heroku.com/${{ secrets.HEROKU_BOOK_APP_NAME }}.git
