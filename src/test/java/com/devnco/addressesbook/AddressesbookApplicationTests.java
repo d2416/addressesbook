@@ -8,7 +8,7 @@ class AddressesbookApplicationTests {
 
 	@Test
 	void contextLoads() {
-		//throw new IllegalStateException();
+		throw new IllegalStateException();
 	}
 
 }
