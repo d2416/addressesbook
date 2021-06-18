@@ -32,4 +32,4 @@ jobs:
         with:
           heroku_api_key: ${{ secrets.HEROKU_APP_KEY }}
           heroku_app_name: ${{ secrets.HEROKU_BOOK_APP_NAME }}
-          heroky_email: ${{ secrets.HEROKU_EMAIL }}
+          heroku_email: ${{ secrets.HEROKU_EMAIL }}
