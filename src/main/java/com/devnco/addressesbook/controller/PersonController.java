@@ -8,7 +8,7 @@ public class PersonController {
 
   @GetMapping("/")
   public String getVersion() {
-    return "The current version is v1!";
+    return "The current version is v1.0!";
   }
 
   @GetMapping("/check-pr")
