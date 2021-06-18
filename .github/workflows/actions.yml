@@ -17,9 +17,6 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-        with:
-          repository: "d2416/addressesbook"
-          ref: "main"
 
       - name: Set up JDK 11
         uses: actions/setup-java@v2
@@ -30,10 +27,16 @@ jobs:
       - name: Build with Maven
         run: mvn -B package --file pom.xml
 
-      - name: Add remote Heroku
-        run: |
-          git remote add heroku https://heroku:${{ secrets.HEROKU_API_KEY }}@git.heroku.com/{{ secrets.HEROKU_BOOK_APP_NAME }}.git
+      # - name: Add remote Heroku
+      #  run: |
+      #    git remote add heroku https://heroku:${{ secrets.HEROKU_API_KEY }}@git.heroku.com/{{ secrets.HEROKU_BOOK_APP_NAME }}.git
 
       - name: Deploy to Heroku and Launch pipeline
+        uses: akhileshns/heroku-deploy@v3.12.12
+        with:
+          heroku_api_key: ${{ secrets.HEROKU_APP_KEY }}
+          heroku_app_name: ${{ secrets.HEROKU_BOOK_APP_NAME }}
+          heroky_email: ${{ secrets.HEROKU_EMAIL }}
+
         run: |
           git push heroku HEAD:main
